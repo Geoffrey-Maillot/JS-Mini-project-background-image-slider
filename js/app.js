@@ -1,35 +1,11 @@
-// immediate invoked function expression
+//Objectif final Je veux deux boutons qui changent le background-image de la div qui a la classe img-container.
 
-(function() {
-  const pictures = [
-    "contBcg-0",
-    "contBcg-1",
-    "contBcg-2",
-    "contBcg-3",
-    "contBcg-4"
-  ];
+//Stocker les nom des images dans un tableau
 
-  //select both left and right button. Add event listeners
-  const buttons = document.querySelectorAll('.btn')
-  const imageDIV = document.querySelector('.img-container')
-  let counter = 0
+// Récpérer les boutons et poser un écouteur de type click
 
-  buttons.forEach(function(button){
-    button.addEventListener('click', function(e){
-      if (button.classList.contains('btn-left')){
-        counter--
-        if(counter < 0){
-          counter = pictures.length -1
-        }
-        imageDIV.style.backgroundImage = `url('./img/${pictures[counter]}.jpeg')`
-      }
-      if (button.classList.contains('btn-right')){
-        counter++
-        if(counter > pictures.length -1){
-          counter = 0
-        }
-        imageDIV.style.backgroundImage = `url('./img/${pictures[counter]}.jpeg')`
-      }
-    })
-  })
-})();
+// Au click, sur le bouton droit change la propriéte "background: url("../img/contBcg-0.jpeg")" par l'élément du tableau
+//qui est à l'index supérieur, si c'est le dernier élément du tableau, met l'élement à l'index 0.
+
+// Au click, sur le bouton droit change la propriéte "background: url("../img/contBcg-0.jpeg")" par l'élément du tableau
+//qui est à l'index inférieur, si c'est le premier élément du tableau, met l'élement du dernier index.
